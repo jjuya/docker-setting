@@ -18,7 +18,7 @@ pipeline {
 
                     sh "docker stop $(docker ps -aq --filter ancestor=docker-test)"
                     sh "docker rm -f $(docker ps -aq --filter ancestor=docker-test)"
-                    sh "docker rmi mire-front"
+                    sh "docker rmi docker-test"
 
                     fi
                 ```

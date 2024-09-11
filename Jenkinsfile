@@ -15,11 +15,9 @@ pipeline {
             steps {
                 sh ```
                     if test "`docker ps -aq --filter ancestor=docker-test`"; then
-
                     sh "docker stop $(docker ps -aq --filter ancestor=docker-test)"
                     sh "docker rm -f $(docker ps -aq --filter ancestor=docker-test)"
                     sh "docker rmi docker-test"
-
                     fi
                 ```
             }

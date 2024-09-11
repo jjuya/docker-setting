@@ -14,9 +14,9 @@ pipeline {
         stage("Clean Up Docker") {
             steps {
                 sh '''
-                    if test "`docker ps -aq --filter ancestor=docker-test`"; then
-                    sh "docker stop $(docker ps -aq --filter ancestor=docker-test)"
-                    sh "docker rm -f $(docker ps -aq --filter ancestor=docker-test)"
+                    if test "`docker ps -aq --filter name=fe-docker-test`"; then
+                    sh "docker stop $(docker ps -aq --filter name=fe-docker-test)"
+                    sh "docker rm -f $(docker ps -aq --filter name=fe-docker-test)"
                     sh "docker rmi docker-test"
                     fi
                 '''

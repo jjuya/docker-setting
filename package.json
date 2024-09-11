@@ -10,8 +10,8 @@
     "start": "next start -p 3000",
     "docker:image:dev": "docker build -t docker-test-dev -f ./Dockerfile . --build-arg ENV_MODE=development",
     "docker:image": "docker build -t docker-test -f ./Dockerfile . --build-arg ENV_MODE=production",
-    "docker:run:dev": "docker run -i --rm -p 3000:3000 docker-test-dev --name fe-docker-test-dev",
-    "docker:run": "docker run -i --rm -p 3000:3000 docker-test --name fe-docker-test"
+    "docker:run:dev": "docker run -i --rm --name fe-docker-test-dev -p 3000:3000 docker-test-dev",
+    "docker:run": "docker run -i --rm --name fe-docker-test -p 3000:3000 docker-test"
   },
   "dependencies": {
     "antd": "^5.20.2",

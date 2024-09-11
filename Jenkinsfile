@@ -15,9 +15,9 @@ pipeline {
             steps {
                 sh '''
                     if test "`docker ps -aq --filter name=fe-docker-test`"; then
-                    sh "docker stop fe-docker-test"
-                    sh "docker rm fe-docker-test"
-                    sh "docker rmi docker-test"
+                    docker stop fe-docker-test
+                    docker rm fe-docker-test
+                    docker rmi docker-test
                     fi
                 '''
             }

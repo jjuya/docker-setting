@@ -1,5 +1,3 @@
-# docker-setting
-
 # Jenkins Set up
 
 ## Git

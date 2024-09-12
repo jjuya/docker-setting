@@ -134,4 +134,16 @@ CMD ["node", "server.js"]
 - **WORKDIR :** CMD에서 설정한 실행 파일이 실행될 디렉터리
 - **EXPOSE :** 호스트와 연결할 포트 번호
 
+## Docker 명령어
 
+- `package.json` 파일의 `script` 부분 확인
+
+### image 생성
+```shell
+docker build -t [image_name] -f ./Dockerfile . --build-arg ENV_MODE=production
+```
+
+### container 생성
+```shell
+docker run --name [container_name] -dp 3000:3000 [image_name]
+```
